@@ -3,6 +3,8 @@
 This is a template to get you started creating mods for Mage Arena.
 It comes with some scripts to help you setup the template as well as build it into a Plugin.
 
+Any questions or concerns can be directed to `Walthzer` in the Mage Arena modding discord.
+
 ### Prerequisites
    - `Mage Arena` installed.
    - `.NET SDK` Installed
@@ -84,6 +86,25 @@ This build script will create a folder `build` and a zipfile of that folder name
 <br>
 Congrats, you just build a custom mod and ran it in Mage Arena. Refer to `Start Development` to see what you should do now.
 
+### Let `built` update your local mod
+Every time you edit your mod and rebuilt it, you have to reimport the local mod into Thunderstore. The `built.bat` file can help you with this and automatically update the files for your mod. So that the only steps you need to test features are:
+ 1. Build
+ 2. Launch from Thunderstore
+
+To do this you need to add the path to your installed local mod into the `settings.bat` file. 
+1. Open your modmanager: Thunderstore, r2modman, etc.
+2. Select the `DEVELOPMENT` profile you created earlier.
+3. Go to `Settings > Locations > Browse profile folder`. This will open file explorer.
+4. The newly opened file explorer window should be in a folder such as:
+    ```
+    C:\Users\<user>\Roaming\Thunderstore Mod Manager\DataFolder\MageArena\profiles\<DEV PROFILE>
+    ```
+5. Copy this path and put it into `settings.bat`
+    ```
+	set THUNDERSTORE_LOCAL_MOD_PATH="<PUT PATH HERE>"
+    ```
+6. Running `build.bat` will now update your mod files in this profile.
+
 ## Start Development
 
 The Mod Template contains two important subfolders:
@@ -127,3 +148,4 @@ Read more: [src/References](https://github.com/Walthzer/MageArenaModTemplate/tre
 
 #### src\Resources\
 Any file you add to this folder: Unity Assetbundles, Images, etc are embedded into your .DLL file. This is usefull in combination with the Asset Management provided by `BlackMagicAPI`, e.g. to load prefabs made in unity into the game without having to manually load them from disk.
+
