@@ -4,7 +4,7 @@ using HarmonyLib;
 using UnityEngine;
 using ModTemplate.Modules;
 
-//This needs to match the RootNamespace in the `.csproj`
+//Rename this to match the name of your mod, This needs to match the RootNamespace in the `.csproj` so edit that as well.
 // e.g. <RootNamespace>ModTemplate</RootNamespace>
 namespace ModTemplate;
 

@@ -36,3 +36,4 @@ IF EXIST %THUNDERSTORE_LOCAL_MOD_PATH% (
 )
 cd build
 winrar a -r -afzip ../%MOD_NAME%-%MOD_VERSION%.zip *.*
+echo %MOD_NAME% v%MOD_VERSION% has been built succesfully.
