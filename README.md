@@ -79,7 +79,7 @@ This build script will create a folder `build` and a zipfile of that folder name
 	2. Open the `DEVELOPMENT` profile and go to `settings > Profile > Import local mod`
 	3. In the pop-up, click `Select File`
 	3. In the window that opens you need to select the zipfile that was created by the build script: `MOD_NAME-MOD_VERSION.zip`<br> where `MOD_NAME` and `MOD_VERSION` are equal to the values you set in settings.bat!
-	4. After selecting the zip file, in the window `Import mod from file`, you can see your the name of your mod and author.<br> These should match what you set in the `settings.bat` 
+	4. After selecting the zip file, in the window `Import mod from file`, you can see the name of your mod and author.<br> These should match what you set in the `settings.bat` 
 6. With your local mod imported, simply install the `BepInEx` and `modsync` mods from Thunderstore.
 7. Run the game via `Modded` in your modmanager.
 8. Go into the tutorial and select/unselelect your Spell Book. Everytime you do, you should cast `Magic Missile`
