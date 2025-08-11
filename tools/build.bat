@@ -1,5 +1,5 @@
 ::has to be called from the primary folder.
-@echo on
+@echo off
 IF NOT EXIST "settings.bat" (
     echo "run in primary folder!"
     exit /b 1
