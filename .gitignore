@@ -3,6 +3,15 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+
+#Mage Arena Mod Template
+/build
+/releases
+*.dll
+**/bin
+**/obj
+*.zip
+
 # User-specific files
 *.rsuser
 *.suo
