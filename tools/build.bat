@@ -30,9 +30,10 @@ IF NOT EXIST "build\BepInEx\plugins\%MOD_NAME%\\%MOD_NAME%.dll" (
     echo Mod DLL failed to copy to build folder!
     exit \b 1
 )
-set LOCAL_MOD_PATH="%THUNDERSTORE_LOCAL_MOD_PATH%\BepInEx\plugins\%MOD_AUTHOR%-%MOD_NAME%\%MOD_NAME%\"
+set LOCAL_MOD_PATH=%THUNDERSTORE_LOCAL_MOD_PATH%\BepInEx\plugins\%MOD_AUTHOR%-%MOD_NAME%\
 IF EXIST %LOCAL_MOD_PATH% (
-    xcopy /s /i /y "build\BepInEx\plugins\%MOD_NAME%\*" %LOCAL_MOD_PATH%
+    xcopy /s /i /y "build\BepInEx\plugins\%MOD_NAME%\*" "%LOCAL_MOD_PATH%%MOD_NAME%\"
+    echo %LOCAL_MOD_PATH%
     echo Updated files in Thunderstore.
 )
 cd build
