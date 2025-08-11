@@ -68,18 +68,27 @@ This script renames files and variables inside `manifest.json` and the `.csproj`
     .\tools\setup.bat
     ```
 
+3. Copy the required .DLL files from your Mage Arena installation.
+	1. In your steam library: `right-click` Mage Arena, then click on `Properties`.
+	2. In the pop-up click `Installed Files` then  `Browse...`. File Explorer will pop-up inside of `Mage Arena`
+	2. Navigate to `MageArena_Data\Managed`. This folder is full of `.DLL` files.
+	3. Copy the `FishNet.Runtime.dll` to `MyCoolMageArenaMod\src\References\`
+	4. Copy the `Path` of this folder.
+	5. Find the lines with `Assembly-CSharp.dll` in `MyCoolMageArenaMod\src\MOD_NAME.csproj` and paste the path onto `<PASTE_MAGE_ARENA_PATH_HERE>`
+
 4. run the `build.bat` script from the `MyCoolMageArenaMod` folder, using `CMD` or the terminal in your Editor. <br>
 This build script will create a folder `build` and a zipfile of that folder named `MOD_NAME-MOD_VERSION.zip`
     ```
     .\tools\build.bat
     ```
+  	**If the zip file is not created, then the build failed. Look in the terminal for any errors.**
     
 5. Open the `Thunderstore`, `r2modman` or your prefered modmanager. Just make sure they allow you to import a local mod.
 	1. Create a new profile and pick a good name to indicate this is for development. e.g. `DEVELOPMENT`
 	2. Open the `DEVELOPMENT` profile and go to `settings > Profile > Import local mod`
 	3. In the pop-up, click `Select File`
 	3. In the window that opens you need to select the zipfile that was created by the build script: `MOD_NAME-MOD_VERSION.zip`<br> where `MOD_NAME` and `MOD_VERSION` are equal to the values you set in settings.bat!
-	4. After selecting the zip file, in the window `Import mod from file`, you can see the name of your mod and author.<br> These should match what you set in the `settings.bat` 
+	4. After selecting the zip file, in the window `Import mod from file`, you can see your the name of your mod and author.<br> These should match what you set in the `settings.bat` 
 6. With your local mod imported, simply install the `BepInEx` and `modsync` mods from Thunderstore.
 7. Run the game via `Modded` in your modmanager.
 8. Go into the tutorial and select/unselelect your Spell Book. Everytime you do, you should cast `Magic Missile`
@@ -97,7 +106,7 @@ To do this you need to add the path to your installed local mod into the `settin
 3. Go to `Settings > Locations > Browse profile folder`. This will open file explorer.
 4. The newly opened file explorer window should be in a folder such as:
     ```
-    C:\Users\<user>\Roaming\Thunderstore Mod Manager\DataFolder\MageArena\profiles\<DEV PROFILE>
+    C:\Users\<user>Roaming\Thunderstore Mod Manager\DataFolder\MageArena\profiles\<DEV PROFILE>
     ```
 5. Copy this path and put it into `settings.bat`
     ```
