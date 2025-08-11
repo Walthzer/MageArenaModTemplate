@@ -1,5 +1,5 @@
 ::has to be called from the primary folder.
-@echo off
+@echo on
 IF NOT EXIST "settings.bat" (
     echo "run in primary folder!"
     exit /b 1
@@ -30,9 +30,10 @@ IF NOT EXIST "build\BepInEx\plugins\%MOD_NAME%\\%MOD_NAME%.dll" (
     echo Mod DLL failed to copy to build folder!
     exit \b 1
 )
-
-IF EXIST %THUNDERSTORE_LOCAL_MOD_PATH% (
-    xcopy /s /i /y "build\BepInEx\plugins\%MOD_NAME%\*" %THUNDERSTORE_LOCAL_MOD_PATH%
+set LOCAL_MOD_PATH="%THUNDERSTORE_LOCAL_MOD_PATH%\BepInEx\plugins\%MOD_AUTHOR%-%MOD_NAME%\%MOD_NAME%\"
+IF EXIST %LOCAL_MOD_PATH% (
+    xcopy /s /i /y "build\BepInEx\plugins\%MOD_NAME%\*" %LOCAL_MOD_PATH%
+    echo Updated files in Thunderstore.
 )
 cd build
 winrar a -r -afzip ../%MOD_NAME%-%MOD_VERSION%.zip *.*
