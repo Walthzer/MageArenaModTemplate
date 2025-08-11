@@ -15,5 +15,5 @@ powershell -Command "((gc 'packageFiles\manifest.json') -replace 'MOD_NAME', '%M
 
 ::setup the project.csproj
 echo Setup src\%MOd_NAME%.csproj
-powershell -Command "(gc 'src\project.csproj') -replace '(<AssemblyName>|<Product>)(.*?)(</AssemblyName>|</Product>)', '$1%MOD_NAME%$3' | Out-File -encoding ASCII 'src\%MOD_NAME%.csproj'"
-del src\project.csproj
+powershell -Command "(gc 'src\MageArenaModTemplate.csproj') -replace '(<AssemblyName>|<Product>)(.*?)(</AssemblyName>|</Product>)', '$1%MOD_NAME%$3' | Out-File -encoding ASCII 'src\%MOD_NAME%.csproj'"
+del src\MageArenaModTemplate.csproj
