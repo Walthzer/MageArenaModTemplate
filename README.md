@@ -137,7 +137,7 @@ More details: [https://wiki.thunderstore.io/mods/packaging-your-mods]()
  - `.csproj` Tells `dotnet` how to build your mod and what reference/libraries to use.
  - `Plugin.cs` Primary code of your plugin. Its preloaded with the some of the minium code you need in. Read the comments in this file and edit it.
  	- `namespace ModTemplate;` is not set by `setup.bat`, change this manually to something Short and recognisable. 
- 	- `MyGUID`and `PluginName` are set by `setup.bat`. You can change them if they are not to your liking.
+ 	- `MyGUID`and `PluginName` are also not set by `setup.bat`. Change this to fit the formatting described by the comments.
 	- `VersionString` is updated on every build by `build.bat`, leave it and only change the version inside of `settings.bat`
 
 
