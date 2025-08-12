@@ -41,7 +41,7 @@
 	<ItemGroup>
     <!-- Assembly-CSharp from the MageArena files in steam  -->
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Mage Arena\MageArena_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath><PASTE_MAGE_ARENA_PATH_HERE>\Assembly-CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
 
