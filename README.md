@@ -8,6 +8,7 @@ Any questions or concerns can be directed to `Walthzer` in the Mage Arena moddin
 ### Prerequisites
    - `Mage Arena` installed.
    - `.NET SDK` Installed
+   - `C#` and `.NET` compatible editor, such as the free [Visual Studio Community](https://visualstudio.microsoft.com/free-developer-offers/)
 
 ### Installing `.NET SDK`
 The .NET SDK is required to build your plugin files into a .DLL.<br>
