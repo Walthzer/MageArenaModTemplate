@@ -11,6 +11,9 @@ rmdir /s /q build
 mkdir build
 :: Build your DLL
 cd src
+:: Update VersionString in Plugin.cs
+powershell -Command "(gc 'Plugin.cs') -replace 'private const string VersionString.*?;', 'private const string VersionString = \"%MOD_VERSION%\";' | Out-File -encoding ASCII 'Plugin.cs'"
+
 dotnet build -c Release
 cd ..
 IF NOT EXIST "src\bin\Release\netstandard2.1\%MOD_NAME%.dll" (
@@ -37,5 +40,5 @@ IF EXIST %LOCAL_MOD_PATH% (
     echo Updated files in Thunderstore.
 )
 cd build
-winrar a -r -afzip ../%MOD_NAME%-%MOD_VERSION%.zip *.*
+zip -q -r ../%MOD_NAME%-%MOD_VERSION%.zip *.*
 echo %MOD_NAME% v%MOD_VERSION% has been built succesfully.
