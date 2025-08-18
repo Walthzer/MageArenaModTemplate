@@ -40,5 +40,6 @@ IF EXIST %LOCAL_MOD_PATH% (
     echo Updated files in Thunderstore.
 )
 cd build
-tar -c -f ../%MOD_NAME%-%MOD_VERSION%.zip *.*
+tar -c -a -f ../%MOD_NAME%-%MOD_VERSION%.zip *.*
+cd ..
 echo %MOD_NAME% v%MOD_VERSION% has been built succesfully.
